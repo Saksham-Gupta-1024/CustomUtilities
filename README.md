@@ -1,0 +1,1 @@
+This is a repository whose purpose is to create a set of independent projects which might not still work but have some specific use to them. This is to encourage budding developers and to help them showcase their talents.

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+       
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the total cost of the Chandrayaan 3 mission?</h3>
+                <button class="incorrect" id="option1">100 cr.</button>
+                <button class="incorrect" id="option2">900 cr.</button>
+                <button class="correct" id="option3">615 cr.</button>
+                <button class="incorrect" id="option4">1200 cr.</button>
+                <p id="feedback1"></p>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>what is the name of the chairman of ISRO?</h3>
+                <form>
+                    <input type="text" autocapitalize="" autocomplete="off" id="uinput">
+                    <button type="submit" id="sub">Check Answer</button>
+                    <p id="feedback2"></p>
+                </form>
+            </div>
+        </div>
+        <script>
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click',function(){
+                    correct.style.backgroundColor='green'
+                    document.querySelector('#feedback1').innerHTML='Correct!'
+                });
+                let incorrect = document.querySelectorAll('.incorrect');
+                incorrect.forEach(function(element){
+                    element.addEventListener('click',function(){
+                        element.style.backgroundColor='red'
+                        document.querySelector('#feedback1').innerHTML='incorret!'
+                    });
+                });
+                document.querySelector('#sub').addEventListener('click',function(event){
+                    let input = document.querySelector('input');
+                    if (input.value == 'S. Somanath'){
+                        input.style.backgroundColor='green'
+                        document.querySelector('#feedback2').innerHTML='Correct!'
+                    }else{
+                        input.style.backgroundColor='red'
+                        document.querySelector('#feedback2').innerHTML='Incorrect!'
+                    }
+                    event.preventDefault();
+                })
+        
+        </script>
+    </body>
+</html>
